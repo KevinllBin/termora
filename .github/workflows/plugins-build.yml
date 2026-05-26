@@ -25,6 +25,9 @@ on:
       - gradlew.bat
       - .github/workflows/plugins-build.yml
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest

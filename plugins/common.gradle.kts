@@ -1,9 +1,9 @@
 import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
-import org.gradle.jvm.toolchain.JavaLanguageVersion
+import org.gradle.api.attributes.java.TargetJvmVersion
 
-kotlin {
-    jvmToolchain {
-        languageVersion = JavaLanguageVersion.of(25)
+configurations.configureEach {
+    if (isCanBeResolved) {
+        attributes.attribute(TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 25)
     }
 }
 

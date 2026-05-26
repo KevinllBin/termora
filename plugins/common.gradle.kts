@@ -1,4 +1,11 @@
 import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
+import org.gradle.jvm.toolchain.JavaLanguageVersion
+
+kotlin {
+    jvmToolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
 
 fun exec(action: ExecSpec.() -> Unit) {
     providers.exec(action).result.get().assertNormalExitValue()
